@@ -13,9 +13,12 @@ It can enable sparse network with sparsity=1% for  VGG11, VGG16, VGG19, AlexNet 
 
 
 ## Sparse network and Reordering method saved 90% of crossbars in ReRAM
-We Implemented a ordering method to reorder the weights of sparse networks
-After reordering, the sparse network global sparsity = 1% can save 96% crossbars (8x8), 89% crossbars (64x64),83% crossbars (128x128)
+We Implemented a ordering method to reorder the weights of sparse networks. The figure below is an example where we reordered the layer7 of VGG19 and we saved 94 crossbars in this layer.
 ![reordering_weights](https://user-images.githubusercontent.com/49976598/132153863-d1ad9cff-cd63-484c-856d-6a863de667c1.jpg)
+
+From the table, the sparse VGG19 global sparsity = 1% can save 96% crossbars (8x8), 89% crossbars (64x64),83% crossbars (128x128), after reordering. This method also works for Resnet, AlexNet, etc.
+![hardware_saving](https://user-images.githubusercontent.com/49976598/132155734-15b62876-0fe7-4f85-bcc1-72c8125e8efe.jpg)
+
 
 
 SAF and CNN:
