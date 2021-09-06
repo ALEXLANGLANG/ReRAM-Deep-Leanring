@@ -1,5 +1,7 @@
 Sparse network, SAF and Hardware Saving:
-
+    
+    ![alt text](https://github.com/ALEXLANGLANG/ReRAM-Deep-Leanring/blob/master/resources/Mapping_ReRAM.jpg?raw=true)
+    
     Interested:
     The relationship between performance of sparse cnn models and SAF
     How many crossbars we can save from the sparse neural network trained based on The Lottery Ticket Hypothesis
@@ -27,7 +29,7 @@ Sparse network, SAF and Hardware Saving:
 SAF and CNN:
     Interested:
     This experiments is exploring the performance of models when there are SAF
-
+    
     Settings:
     1. SAF happens at different bit position: sign bit, the most significant and the least bit
     2. SAF happens at different layers: convolution layers, fully connected layers
