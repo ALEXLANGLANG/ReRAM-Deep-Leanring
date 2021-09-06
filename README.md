@@ -20,29 +20,10 @@ From the table, the sparse VGG19 global sparsity = 1% can save 96% crossbars (8x
 ![hardware_saving](https://user-images.githubusercontent.com/49976598/132155734-15b62876-0fe7-4f85-bcc1-72c8125e8efe.jpg)
 
 
+# SAF and CNN:
+##SAF and Dense CNN
+We first trained the dense network with SAF. SAF is applied on different layers of networks such as Lenet5, VGG11, by masking a specific position of quantized weights.  We found:  1. normalization Layer helps reduce the impact of SAF but cannot solve the bit error problem. 2. The test accuracy will become random guess even for only 5 percentage of weights are stuck at fault for a particular layer. 3. Convolution layers are more resistant to SAF than fully connected layers.
+## SAF and Sparse CNN
+We were expecting that sparse networks may have better performance on SAF than dense network. But the experiments show that sparse networks are much more sensitive to SAF faults than dense network.
 
-SAF and CNN:
-
-
-## SAF and Sparse network Experiment:
-We were expecting that sparse networks may have better performance on SAF than dense network.
-But the experiments show that sparse networks are much more sensitive to SAF faults than dense network.
-
-Interested:
-This experiments is exploring the performance of models when there are SAF
-
-Settings:
-1. SAF happens at different bit position: sign bit, the most significant and the least bit
-2. SAF happens at different layers: convolution layers, fully connected layers
-4. SAF happens at different models: Lenet5, VGG11, VGG16, etc.
-
-Main Steps:
-1. Weights Quantization
-2. Mask different position of weights to simulate "stuck at fault" (SAF)
-3. Train convolutional neural networks with SAF weights
-
-Observations:
-1. For both VGG11 and Lenet5, the first layer is less sensitive to bit error
-2. Normalization Layer helps but cannot solve the bit error problem
-3. The test accuracy will become random guess even for only 5 percentage of weights are stuck at fault for a particular layer
 
